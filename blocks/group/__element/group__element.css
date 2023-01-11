@@ -1,0 +1,12 @@
+.group__element {
+    background-color: white;
+    border-radius: 10px;
+    width: 282px;
+    margin: auto;
+}
+
+@media (min-width: 1080px) {
+    .group__element {
+        margin: 0;
+    }
+}

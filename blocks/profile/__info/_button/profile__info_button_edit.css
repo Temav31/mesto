@@ -1,0 +1,22 @@
+.profile__info_button_edit {
+    background-color: black;
+    border: 2px solid #FFFFFF;
+    padding: 5.25px;
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 1080px) {
+    .profile__info_button_edit {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.profile__info_button_edit:hover {
+    opacity: 0.6;
+}

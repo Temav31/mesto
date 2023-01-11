@@ -1,0 +1,17 @@
+.popup__close {
+    width: 282px;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+@media (min-width: 1080px) {
+    .popup__close {
+        width: 510px;
+    }
+}
+@media (min-width: 1280px) {
+    .popup__close {
+        margin: 0;
+    }
+}

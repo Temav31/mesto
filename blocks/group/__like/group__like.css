@@ -1,0 +1,15 @@
+.group__like {
+    width: 22px;
+    height: 19px;
+    padding: 4px 5px 0 0;
+}
+
+.group__like:hover {
+    opacity: 0.5;
+}
+
+.group__like:active {
+    opacity: 1;
+    background-image: url(../image/likeActive.svg);
+
+}

@@ -1,0 +1,13 @@
+.profile__info_author {
+    margin-top: 26px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+}
+@media (min-width: 1080px) {
+    .profile__info_author {
+        margin-top: 0;
+        align-items: baseline;
+    }
+}
