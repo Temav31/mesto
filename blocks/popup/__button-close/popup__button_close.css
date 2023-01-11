@@ -1,13 +1,10 @@
-.popup__button_close {
+.popup__button-close {
     background-color: transparent;
     width: 20px;
     height: 20px;
     margin-bottom: 16px;
 }
 
-.popup__button_close:hover {
+.popup__button-close:hover {
     opacity: 0.8;
-}
-.popup__open {
-    display: flex;
 }

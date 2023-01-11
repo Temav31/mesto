@@ -3,8 +3,8 @@ const aboutPopup = document.querySelector('.popup_about');
 const aboutCloseButton = aboutPopup.querySelector('.popup__close');
 const aboutAddButton = document.querySelector('.popup__button')
 let mainForm = document.querySelector('form');
-let nameInput = document.querySelector('.popup__input_text_name');
-let workInput = document.querySelector('.popup__input_text_work');
+let nameInput = document.querySelector('.popup__input-name');
+let workInput = document.querySelector('.popup__input-work');
 let profileName = document.querySelector('.profile__info-name');
 let profileWork = document.querySelector('.profile__info-work');
 // нажатия кнопок
