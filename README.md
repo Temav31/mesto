@@ -1,6 +1,6 @@
 # Проект: Mesto
 # Ссылка на проект
-https://temav31.github.io/russian-travel/index.html
+https://temav31.github.io/mesto/index.html
 ## Цели проекта:
 * создать сайт с адаптивной вёрсткой;
 * подключить скрипты на JS;
