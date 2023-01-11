@@ -1,4 +1,4 @@
-.pupup__window-header {
+.pupup__header {
     margin: 25px auto 69px;
     width: 238px;
     font-size: 18px;
@@ -6,7 +6,7 @@
 }
 
 @media (min-width: 1080px) {
-    .pupup__window-header {
+    .pupup__header {
         width: 358px;
         margin: 35px auto 41px;
         font-size: 24px;
