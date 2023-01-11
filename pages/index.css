@@ -38,8 +38,8 @@
 /* подключение popup */
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/__close/popup__close.css);
-@import url(../blocks/popup/__container/pupup__container.css);
-@import url(../blocks/popup/__title/pupup__title.css);
+@import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/__header/popup__header.css);
 @import url(../blocks/popup/__button-close/popup__button-close.css);
 @import url(../blocks/popup/__button/popup__button.css);
 @import url(../blocks/popup/__form/popup__form.css);
