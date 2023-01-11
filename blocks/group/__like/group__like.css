@@ -1,7 +1,9 @@
 .group__like {
+    background-image: url(../../../image/like.svg);
+    background-repeat: no-repeat;
     width: 22px;
     height: 19px;
-    padding: 4px 5px 0 0;
+    padding-right: 5px;
 }
 
 .group__like:hover {
@@ -10,6 +12,6 @@
 
 .group__like:active {
     opacity: 1;
-    background-image: url(../image/likeActive.svg);
+    background-image: url(../../../image/likeActive.svg);
 
 }
