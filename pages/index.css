@@ -14,16 +14,17 @@
 @import url(../blocks/header/__logo/header__logo.css);
 /* подключение profile */
 @import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__info/profile__info.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
-@import url(../blocks/profile/__avatar/_image/profile__avatar_image_photo.css);
-@import url(../blocks/profile/__image/profile__image_edit.css);
-@import url(../blocks/profile/__image/profile__image_addcss);
-@import url(../blocks/profile/__image/profile__image.css);
-@import url(../blocks/profile/__info/_text/profile__info_text_author.css);
-@import url(../blocks/profile/__info/_button/profile__info_button_add.css);
-@import url(../blocks/profile/__info/_button/profile__info_button_edit.css);
-@import url(../blocks/profile/__info/_text/profile__info_text_name.css);
-@import url(../blocks/profile/__info/_work/profile__info_work.css);
+@import url(../blocks/profile/__fullscrin/profile__fullscrin.css);
+@import url(../blocks/profile/__avatar-image/profile__avatar-image.css);
+@import url(../blocks/profile/__info-author/profile__info-author.css);
+@import url(../blocks/profile/__info-name/profile__info-name.css);
+@import url(../blocks/profile/__button-edit/profile__button-edit.css);
+@import url(../blocks/profile/__image-edit/profile__image-edit.css);
+@import url(../blocks/profile/__info-work/profile__info-work.css);
+@import url(../blocks/profile/__button-add/profile__button-add.css);
+@import url(../blocks/profile/__image-add/profile__image-add.css);
 /* подключение group */
 @import url(../blocks/group/group.css);
 @import url(../blocks/group/__element/_image/group__element_image.css);
@@ -31,7 +32,6 @@
 @import url(../blocks/group/__element/_name/group__element_name.css);
 @import url(../blocks/group/__element/group__element.css);
 @import url(../blocks/group/__like/group__like.css);
-@import url(../blocks/group/__fullscrin/profile__fullscrin.css);
 /* подключение footer */
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);

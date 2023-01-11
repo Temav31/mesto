@@ -1,4 +1,4 @@
-.profile__info_button_add {
+.profile__button-add {
     padding: 17px 0;
     color: white;
     background-color: black;
@@ -8,12 +8,13 @@
     height: 50px;
 }
 
-.profile__info_button_add:hover {
+.profile__button-add:hover {
     opacity: 0.6;
 }
 
 @media (min-width: 1080px) {
-    .profile__info_button_add {
+    .profile__button-add {
+        padding: 14px 0;
         width: 150px;
         height: 50px;
     }

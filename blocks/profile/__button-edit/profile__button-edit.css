@@ -1,4 +1,4 @@
-.profile__info_button_edit {
+.profile__button-edit {
     background-color: black;
     border: 2px solid #FFFFFF;
     padding: 5.25px;
@@ -11,12 +11,14 @@
 }
 
 @media (min-width: 1080px) {
-    .profile__info_button_edit {
+    .profile__button-edit {
         width: 24px;
         height: 24px;
+        margin-top: 15px;
+        margin-left: 8px;
     }
 }
 
-.profile__info_button_edit:hover {
+.profile__button-edit:hover {
     opacity: 0.6;
 }

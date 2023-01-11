@@ -1,10 +1,10 @@
-.profile__image_edit {
+.profile__image-edit {
     width: 7.5px;
     height: 7.5px;
 }
 
 @media (min-width: 1080px) {
-    .profile__image_edit{
+    .profile__image-edit{
         width: 10px;
         height: 10px;
     }
