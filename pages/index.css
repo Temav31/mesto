@@ -15,14 +15,14 @@
 /* подключение profile */
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
-@import url(../blocks/profile/__avatar/_image/profile__avatar_image.css);
+@import url(../blocks/profile/__avatar/_image/profile__avatar_image_photo.css);
 @import url(../blocks/profile/__image/profile__image_edit.css);
 @import url(../blocks/profile/__image/profile__image_addcss);
 @import url(../blocks/profile/__image/profile__image.css);
-@import url(../blocks/profile/__info/_author/profile__info_author.css);
+@import url(../blocks/profile/__info/_text/profile__info_text_author.css);
 @import url(../blocks/profile/__info/_button/profile__info_button_add.css);
 @import url(../blocks/profile/__info/_button/profile__info_button_edit.css);
-@import url(../blocks/profile/__info/_name/profile__info_name.css);
+@import url(../blocks/profile/__info/_text/profile__info_text_name.css);
 @import url(../blocks/profile/__info/_work/profile__info_work.css);
 /* подключение group */
 @import url(../blocks/group/group.css);
