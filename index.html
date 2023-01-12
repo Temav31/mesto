@@ -6,98 +6,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesto</title>
     <link rel="stylesheet" href="./pages/index.css">
-    <link rel="stylesheet" href="./style.css">
-    <script src="./scripts/index.js" defer></script>
 </head>
 
 <body class="page">
-    <section class="header">
+    <header class="header">
         <img src="./image/logo1.svg" alt="Логотип" class="header__logo">
-    </section>
-    <section class="profile">
-        <div class="profile__fullscrin">
-            <div class="profile__avatar">
+    </header>
+    <main>
+        <section class="profile">
+            <div class="profile__fullscrin">
                 <img src="./image/image.jpg" class="profile__avatar-image" alt="На фотографии дедушка в красной шапке">
+                <div class="profile__info">
+                    <div class="profile__info-author">
+                        <h1 class="profile__info-name text-profile">Жак-Ив Кусто</h1>
+                        <button type="menu" class="profile__button-edit">
+                            <img src="./image/vector.svg" alt="Значок редактирования профиля"
+                                class="profile__image-edit">
+                        </button>
+                    </div>
+                    <p class="profile__info-work text"> Исследователь океана</p>
+                </div>
             </div>
-            <div class="profile__info">
-                <div class="profile__info-author">
-                    <h1 class="profile__info-name text-profile">Жак-Ив Кусто</h1>
-                    <button class="profile__button-edit">
-                        <img src="./image/vector.svg" alt="" class="profile__image-edit">
+            <button type="button" class="profile__button-add">
+                <img src="./image/add.svg" alt="Значок добавить" class="profile__image-add">
+            </button>
+        </section>
+        <div class="popup popup_about">
+            <button type="reset" class="popup__close">
+                <img src="./image/close.svg" alt="Значок закрытия формы" class="popup__button-close">
+            </button>
+            <div class="popup__container">
+                <h2 class="popup__header text-group">
+                    Редактировать профиль
+                </h2>
+                <form name="change-info" class="popup__form">
+                    <input type="text" class="popup__input popup__input_text_name">
+                    <input type="text" class="popup__input popup__input_text_work">
+                    <button type="submit" class="popup__button text">Сохранить</button>
+                </form>
+            </div>
+        </div>
+        <section class="group">
+            <div class="group__element">
+                <img src="./image/MaskGroup.png" alt="Фото монастыря в горах." class="group__element-image">
+                <div class="group__element-label">
+                    <h3 class="group__element-name text-group">Карачаево-Черкесия</h3>
+                    <button type="button" class="group__like">
+                        <img src="./image/like.svg" alt="Значок лайка" class="group__image-like">
                     </button>
                 </div>
-                <p class="profile__info-work text"> Исследователь океана</p>
             </div>
-        </div>
-        <button class="profile__button-add">
-            <img src="./image/add.svg" alt="Значок добавить" class="profile__image-add">
-        </button>
-    </section>
-    <div class="popup popup_about">
-        <div class="popup__close">
-            <img src="./image/close.svg" alt="" class="popup__button-close">
-        </div>
-        <div class="popup__container">
-            <h2 class="popup__header text-group">
-                Редактировать профиль
-            </h2>
-            <form class="popup__form">
-                <input type="text" class="popup__input popup__input-name">
-                <input type="text" class="popup__input popup__input-work">
-                <button class="popup__button text">Сохранить</button>
-            </form>
-        </div>
-    </div>
-    <section class="group">
-        <div class="group__element">
-            <img src="./image/MaskGroup.png" alt="Фото монастыря в горах." class="group__element-image">
-            <div class="group__element-label">
-                <h3 class="group__element-name text-group">Черкессия</h3>
-                <div class="group__like"></div>
+            <div class="group__element">
+                <img src="./image/Ilbrus.png" alt="Фото большой равнины на закате." class="group__element-image">
+                <div class="group__element-label">
+                    <h3 class="group__element-name text-group">Гора Эльбрус</h3>
+                    <button type="button" class="group__like">
+                        <img src="./image/like.svg" alt="Значок лайка" class="group__image-like">
+                    </button>
+                </div>
             </div>
-        </div>
-        <div class="group__element">
-            <img src="./image/Ilbrus.png" alt="Фото большой равнины на закате." class="group__element-image">
-            <div class="group__element-label">
-                <h3 class="group__element-name text-group">Гора Эльбрус</h3>
-                <div class="group__like"></div>
+            <div class="group__element">
+                <img src="./image/Dombay.png" alt="Фото горы, на вершине которой лежит снег."
+                    class="group__element-image">
+                <div class="group__element-label">
+                    <h3 class="group__element-name text-group">Домбай</h3>
+                    <button type="button" class="group__like">
+                        <img src="./image/like.svg" alt="Значок лайка" class="group__image-like">
+                    </button>
+                </div>
             </div>
-        </div>
-        <div class="group__element">
-            <img src="./image/Dombay.png" alt="Фото горы, на вершине которой лежит снег." class="group__element-image">
-            <div class="group__element-label">
-                <h3 class="group__element-name text-group">Домбай</h3>
-                <div class="group__like"></div>
+            <div class="group__element">
+                <img src="./image/Ilbrus.png" alt="Фото большой равнины на закате." class="group__element-image">
+                <div class="group__element-label">
+                    <h3 class="group__element-name text-group">Гора Эльбрус</h3>
+                    <button type="button" class="group__like">
+                        <img src="./image/like.svg" alt="Значок лайка" class="group__image-like">
+                    </button>
+                </div>
             </div>
-        </div>
-        <div class="group__element">
-            <img src="./image/Ilbrus.png" alt="Фото большой равнины на закате." class="group__element-image">
-            <div class="group__element-label">
-                <h3 class="group__element-name text-group">Гора Эльбрус</h3>
-                <div class="group__like"></div>
+            <div class="group__element">
+                <img src="./image/Dombay.png" alt="Фото горы, на вершине которой лежит снег."
+                    class="group__element-image">
+                <div class="group__element-label">
+                    <h3 class="group__element-name text-group">Домбай</h3>
+                    <button type="button" class="group__like">
+                        <img src="./image/like.svg" alt="Значок лайка" class="group__image-like">
+                    </button>
+                </div>
             </div>
-        </div>
-        <div class="group__element">
-            <img src="./image/Dombay.png" alt="Фото горы, на вершине которой лежит снег." class="group__element-image">
-            <div class="group__element-label">
-                <h3 class="group__element-name text-group">Домбай</h3>
-                <div class="group__like"></div>
+            <div class="group__element">
+                <img src="./image/MaskGroup.png" alt="Фото монастыря в горах." class="group__element-image">
+                <div class="group__element-label">
+                    <h3 class="group__element-name text-group">Карачаево-Черкесия</h3>
+                    <button type="button" class="group__like">
+                        <img src="./image/like.svg" alt="Значок лайка" class="group__image-like">
+                    </button>
+                </div>
             </div>
-        </div>
-        <div class="group__element">
-            <img src="./image/MaskGroup.png" alt="Фото монастыря в горах." class="group__element-image">
-            <div class="group__element-label">
-                <h3 class="group__element-name text-group">Карачаевск</h3>
-                <div class="group__like"></div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="footer">
-        <p class="footer__copyright text-footer">
-            © 2020 Mesto Russia
-        </p>
-    </section>
+        <footer class="footer">
+            <p class="footer__copyright text-footer">
+                © 2020 Mesto Russia
+            </p>
+        </footer>
+    </main>
+    <script src="./scripts/index.js" defer></script>
 </body>
 
 </html>

@@ -1,4 +1,6 @@
 .popup__close {
+    background-color: transparent;
+    border: none;
     width: 282px;
     display: flex;
     flex-direction: row;
