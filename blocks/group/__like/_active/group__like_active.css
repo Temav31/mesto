@@ -1,0 +1,4 @@
+.group__like_active {
+    opacity: 1;
+    background-image: url(../../../image/likeActive.svg);
+}
