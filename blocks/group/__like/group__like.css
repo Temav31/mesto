@@ -10,9 +10,3 @@
 .group__like:hover {
     opacity: 0.5;
 }
-
-.group__like_active {
-    opacity: 1;
-    background-image: url(../../../image/likeActive.svg);
-
-}
