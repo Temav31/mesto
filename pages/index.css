@@ -26,12 +26,15 @@
 @import url(../blocks/profile/__image-add/profile__image-add.css);
 /* подключение group */
 @import url(../blocks/group/group.css);
+@import url(../blocks/group/__trash/group__trash.css);
+@import url(../blocks/group/__image-trash/group__image-trash.css);
 @import url(../blocks/group/__element-image/group__element-image.css);
 @import url(../blocks/group/__element-label/group__element-label.css);
 @import url(../blocks/group/__element-name/group__element-name.css);
 @import url(../blocks/group/__element/group__element.css);
 @import url(../blocks/group/__like/group__like.css);
 @import url(../blocks/group/__image-like/group__image-like.css);
+@import url(../blocks/group/__like/_active/group__like_active.css);
 /* подключение footer */
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
@@ -44,4 +47,10 @@
 @import url(../blocks/popup/__button/popup__button.css);
 @import url(../blocks/popup/__form/popup__form.css);
 @import url(../blocks/popup/__input/popup__input.css);
-@import url(../blocks//popup/_open/popup_open.css);
+@import url(../blocks/popup/__elements/popup__elements.css);
+@import url(../blocks/popup/_open/popup_open.css);
+
+@import url(../blocks/popup-image/popup-image.css);
+@import url(../blocks/popup-image/__text/popup-image__text.css);
+@import url(../blocks/popup-image/__elements/popup-image__elements.css);
+@import url(../blocks/popup-image/__image/popup-image__image.css);

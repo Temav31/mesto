@@ -1,0 +1,11 @@
+.group__trash {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.group__trash:hover {
+    opacity: 0.6;
+}

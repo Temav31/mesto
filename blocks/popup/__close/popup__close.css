@@ -1,19 +1,18 @@
 .popup__close {
     background-color: transparent;
     border: none;
-    width: 282px;
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 6px;
+    top: -37px;
 }
 
 @media (min-width: 1080px) {
     .popup__close {
-        width: 510px;
-    }
-}
-@media (min-width: 1280px) {
-    .popup__close {
-        margin: 0;
+        width: 32px;
+        height: 32px;
+        top: -41px;
+        right: -34px;
     }
 }
