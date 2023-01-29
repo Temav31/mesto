@@ -68,7 +68,7 @@ const initialCards = [
 // скрипт для placePopup
 // переменные placePopup
 const placeButton = document.querySelector('.profile__button-add');
-const placePopup = document.querySelector('.popup__place');
+const placePopup = document.querySelector('.popup_place');
 const placeCloseButton = document.querySelector('.popup__close-place');
 const placeAddButton = document.querySelector('.popup__button-place');
 let placeForm = document.querySelector('.popup__form-place');
