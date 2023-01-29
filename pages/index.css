@@ -33,7 +33,6 @@
 @import url(../blocks/group/__element-name/group__element-name.css);
 @import url(../blocks/group/__element/group__element.css);
 @import url(../blocks/group/__like/group__like.css);
-@import url(../blocks/group/__image-like/group__image-like.css);
 @import url(../blocks/group/__like/_active/group__like_active.css);
 /* подключение footer */
 @import url(../blocks/footer/footer.css);

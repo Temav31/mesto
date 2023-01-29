@@ -120,7 +120,6 @@ function createCard(text) {
     // кнопка лайка
     const likeButton = card.querySelector('.group__like');
     likeButton.addEventListener('click', function (evt) {
-        console.log('hi');
         evt.target.classList.toggle('group__like_active');
     });
     const cardText = card.querySelector('.group__element-name');
