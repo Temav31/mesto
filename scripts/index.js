@@ -74,6 +74,7 @@ const cardTemplate = document.querySelector('.group-template');
 const groupImage = document.querySelector('.popup-image__image');
 const groupText = document.querySelector('.popup-image__text');
 const groupPopup = document.querySelector('.popup-image');
+const groupCloseButton = document.querySelector('.popup__close-group');
 // открытие попапа
 placeButton.addEventListener('click', (event) => {
     event.preventDefault();
@@ -87,6 +88,9 @@ placeCloseButton.addEventListener('click', () => {
 placeAddButton.addEventListener('click', () => {
     closePopup(placePopup);
 });
+groupCloseButton.addEventListener('click', () => {
+    closePopup(groupPopup);
+});
 // функция удаления
 function deleteCard(evt) {
     const card = evt.target.closest('.group__element').remove();
@@ -99,7 +103,6 @@ function deleteCardEvent(card) {
 placeForm.addEventListener('submit', addCardSubmitHandler);
 // начальное создание карточек
 function createCard(text) {
-    const groupCloseButton = document.querySelector('.popup__close-group');
     const card = cardTemplate.content.cloneNode(true);
     // кнопка лайка
     const likeButton = card.querySelector('.group__like');
@@ -117,9 +120,6 @@ function createCard(text) {
         groupImage.alt = cardText.textContent;
         openPopup(groupPopup);
     })
-    groupCloseButton.addEventListener('click', () => {
-        closePopup(groupPopup);
-    });
     deleteCardEvent(card);
     return card;
 }
