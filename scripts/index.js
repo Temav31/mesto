@@ -84,10 +84,7 @@ placeButton.addEventListener('click', (event) => {
 placeCloseButton.addEventListener('click', () => {
     closePopup(placePopup);
 });
-// закрытие placePopup при нажатии кнопки Сохранить
-placeAddButton.addEventListener('click', () => {
-    closePopup(placePopup);
-});
+// кнопка закрыть groupPopup
 groupCloseButton.addEventListener('click', () => {
     closePopup(groupPopup);
 });
@@ -139,8 +136,9 @@ function addCardSubmitHandler(event) {
     const group = createCard({ name: placeInput, link: imageInput });
     placeForm.reset();
     addCardToSection(group);
+    closePopup(placePopup);
 }
 // для записывания карточек
-function addCardToSection(evt) {
-    cardContainer.prepend(evt);
+function addCardToSection(card) {
+    cardContainer.prepend(card);
 };
