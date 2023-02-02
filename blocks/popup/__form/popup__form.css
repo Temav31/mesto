@@ -1,6 +1,8 @@
 .popup__form {
+    padding-top: 1px;
     margin: 0 auto;
     width: 238px;
+    display: flex;
 }
 
 @media (min-width: 1080px) {

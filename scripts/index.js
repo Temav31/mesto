@@ -11,10 +11,28 @@ const profileWork = document.querySelector('.profile__info-work');
 // закрытие попапа
 function closePopup(popup) {
     popup.classList.remove('popup_open');
+    document.removeEventListener('keyup', escClosePopup);
 }
 function openPopup(popup) {
     popup.classList.add('popup_open');
+    document.addEventListener('keyup', escClosePopup);
 }
+// при нажатии вне попапа
+function outsideClosePopup(popup) {
+    popup.addEventListener('click', (evt) => {
+        if (evt.target === evt.currentTarget) { 
+            closePopup(popup);
+        }
+    });
+}
+// закрытие при нажатии кнопки esc
+function escClosePopup(evt){
+    evt.preventDefault();
+    const openPopup = document.querySelector('.popup_open');
+    if(evt.key === 'Escape'){
+        closePopup(openPopup);
+    }
+};
 // нажатия кнопок 
 aboutButton.addEventListener('click', (event) => {
     //  для того чтобы не переходить по форме
@@ -26,6 +44,8 @@ aboutButton.addEventListener('click', (event) => {
 aboutCloseButton.addEventListener('click', () => {
     closePopup(aboutPopup);
 });
+// закрывается вне папапа
+outsideClosePopup(aboutPopup);
 // чтение из формы
 function handleAboutFormSubmit(event) {
     event.preventDefault();
@@ -88,6 +108,8 @@ placeCloseButton.addEventListener('click', () => {
 groupCloseButton.addEventListener('click', () => {
     closePopup(groupPopup);
 });
+// закрывается вне папапа
+outsideClosePopup(placePopup);
 // функция удаления
 function deleteCard(evt) {
     const card = evt.target.closest('.group__element').remove();
@@ -137,6 +159,8 @@ function addCardSubmitHandler(event) {
     placeForm.reset();
     addCardToSection(group);
     closePopup(placePopup);
+    // закрывается вне папапа
+    outsideClosePopup(placePopup);
 }
 // для записывания карточек
 function addCardToSection(card) {
