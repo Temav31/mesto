@@ -20,16 +20,16 @@ function openPopup(popup) {
 // при нажатии вне попапа
 function outsideClosePopup(popup) {
     popup.addEventListener('click', (evt) => {
-        if (evt.target === evt.currentTarget) { 
+        if (evt.target === evt.currentTarget) {
             closePopup(popup);
         }
     });
 }
 // закрытие при нажатии кнопки esc
-function escClosePopup(evt){
+function escClosePopup(evt) {
     evt.preventDefault();
-    const openPopup = document.querySelector('.popup_open');
-    if(evt.key === 'Escape'){
+    if (evt.key === 'Escape') {
+        const openPopup = document.querySelector('.popup_open'); а
         closePopup(openPopup);
     }
 };
@@ -95,6 +95,8 @@ const groupImage = document.querySelector('.popup-image__image');
 const groupText = document.querySelector('.popup-image__text');
 const groupPopup = document.querySelector('.popup-image');
 const groupCloseButton = document.querySelector('.popup__close-group');
+const placeInput = document.querySelector('.popup__input_text_place');
+const imageInput = document.querySelector('.popup__input_text_image');
 // открытие попапа
 placeButton.addEventListener('click', (event) => {
     event.preventDefault();
@@ -108,7 +110,9 @@ placeCloseButton.addEventListener('click', () => {
 groupCloseButton.addEventListener('click', () => {
     closePopup(groupPopup);
 });
-// закрывается вне папапа
+// закрывается вне groupPopup
+outsideClosePopup(groupPopup);
+// закрывается вне placePopup
 outsideClosePopup(placePopup);
 // функция удаления
 function deleteCard(evt) {
@@ -153,14 +157,10 @@ renderCards();
 // добавление карточки через попап
 function addCardSubmitHandler(event) {
     event.preventDefault();
-    const placeInput = document.querySelector('.popup__input_text_place').value;
-    const imageInput = document.querySelector('.popup__input_text_image').value;
-    const group = createCard({ name: placeInput, link: imageInput });
+    const group = createCard({ name: placeInput.value, link: imageInput.value });
     placeForm.reset();
     addCardToSection(group);
     closePopup(placePopup);
-    // закрывается вне папапа
-    outsideClosePopup(placePopup);
 }
 // для записывания карточек
 function addCardToSection(card) {

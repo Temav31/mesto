@@ -2,7 +2,16 @@
 const form = document.querySelector('.popup__form-about');
 const formInput = document.querySelector('.popup__input_text_name');
 const formError = document.querySelector(`.${formInput.id}-error`);
-console.log('hi');
+// включение валидации вызовом enableValidation
+// все настройки передаются при вызове
+enableValidation({
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__button',
+    inactiveButtonClass: 'popup__button_disabled',
+    inputErrorClass: 'popup__input_type_error',
+    errorClass: 'popup__error_visible'
+});
 // для активации ошибки
 const showInputError = (formElement, inputElement, errorMessage) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
