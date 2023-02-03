@@ -10,6 +10,7 @@
     line-height: 17px;
     text-align: center;
     background-color: black;
+    cursor: pointer;
 }
 
 .popup__button:hover {

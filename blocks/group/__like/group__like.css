@@ -5,6 +5,7 @@
     height: 19px;
     background-image: url(../../../image/like.svg);
     background-repeat: no-repeat;
+    cursor: pointer;
 }
 
 .group__like:hover {

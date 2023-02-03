@@ -1,11 +1,12 @@
 .profile__button-add {
     padding: 17px 0;
     color: white;
-    background-color: black;
+    background-color: transparent;
     border: 2px solid #FFFFFF;
     border-radius: 2px;
     width: 282px;
     height: 50px;
+    cursor: pointer;
 }
 
 .profile__button-add:hover {
