@@ -29,7 +29,7 @@ function outsideClosePopup(popup) {
 function escClosePopup(evt) {
     evt.preventDefault();
     if (evt.key === 'Escape') {
-        const openPopup = document.querySelector('.popup_open'); а
+        const openPopup = document.querySelector('.popup_open');
         closePopup(openPopup);
     }
 };

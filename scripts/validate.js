@@ -20,14 +20,10 @@ const checkInputValidity = (formElement, inputElement, form) => {
         hideInputError(formElement, inputElement, form);
     }
 }
-
-const setEventListeners = (formElement, form) => {
+const setEventListeners = (formElement, buttonElement, form) => {
     const inputList = Array.from(formElement.querySelectorAll(form.inputSelector));
-    const buttonElement = formElement.querySelector(form.submitButtonSelector);
-
     // чтобы проверить состояние кнопки в самом начале
     toggleButtonState(inputList, buttonElement, form);
-
     inputList.forEach((inputElement) => {
         inputElement.addEventListener('input', function () {
             checkInputValidity(formElement, inputElement, form);
@@ -36,15 +32,15 @@ const setEventListeners = (formElement, form) => {
         });
     });;
 };
-
 const enableValidation = (form) => {
     const formList = Array.from(document.querySelectorAll(form.formSelector));
     formList.forEach((formElement) => {
+        const buttonElement = formElement.querySelector(form.submitButtonSelector);
         formElement.addEventListener('submit', function (evt) {
             evt.preventDefault();
-            buttonLock(formElement, form);
+            disableButton(buttonElement, form);
         });
-        setEventListeners(formElement, form);
+        setEventListeners(formElement, buttonElement, form);
     });
 };
 // возвращает ошибку
@@ -62,17 +58,15 @@ function hasInvalidInput(inputList) {
 }
 function toggleButtonState(inputList, buttonElement, form) {
     if (hasInvalidInput(inputList)) {
-        buttonElement.classList.add(form.inactiveButtonClass);
-        buttonElement.setAttribute('disabled', 'disabled');
+        disableButton(buttonElement, form);
     } else {
         buttonElement.classList.remove(form.inactiveButtonClass);
         buttonElement.removeAttribute('disabled');
     }
 }
-function buttonLock(formElement, form){
-    const buttonSave= formElement.querySelector(form.submitButtonSelector);
-    buttonSave.classList.add(form.inactiveButtonClass);
-    buttonSave.setAttribute('disabled', 'disabled');
+function disableButton(buttonElement, form){
+    buttonElement.classList.add(form.inactiveButtonClass);
+    buttonElement.setAttribute('disabled', 'disabled');
 }
 // все настройки передаются при вызове
 enableValidation({
