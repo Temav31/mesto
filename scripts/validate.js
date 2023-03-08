@@ -1,4 +1,3 @@
-// для активации ошибки
 const showInputError = (formElement, inputElement, errorMessage, config) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.add(config.errorClass);
@@ -68,7 +67,7 @@ function disableButton(buttonElement, config){
     buttonElement.classList.add(config.inactiveButtonClass);
     buttonElement.setAttribute('disabled', 'disabled');
 }
-// все настройки передаются при вызове
+// все настройки form
 enableValidation({
     formSelector: '.popup__form',
     inputSelector: '.popup__input',

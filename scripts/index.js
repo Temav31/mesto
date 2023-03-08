@@ -54,6 +54,18 @@ function handleAboutFormSubmit(event) {
     closePopup(aboutPopup);
 }
 aboutnForm.addEventListener('submit', handleAboutFormSubmit);
+// скрипт для placePopup
+// переменные placePopup
+const placeButton = document.querySelector('.profile__button-add');
+const placePopup = document.querySelector('.popup_place');
+const placeCloseButton = document.querySelector('.popup__close-place');
+const placeForm = document.querySelector('.popup__form-place');
+const groupCloseButton = document.querySelector('.popup__close-group');
+// для передачи значений из формы
+const placeInput = document.querySelector('.popup__input_text_place');
+const imageInput = document.querySelector('.popup__input_text_image');
+// импорт класса 
+import Card from './Card.js';
 // массив карточек
 const initialCards = [
     {
@@ -81,28 +93,40 @@ const initialCards = [
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
 ];
-// скрипт для placePopup
-// переменные placePopup
-const placeButton = document.querySelector('.profile__button-add');
-const placePopup = document.querySelector('.popup_place');
-const placeCloseButton = document.querySelector('.popup__close-place');
-const placeAddButton = document.querySelector('.popup__button-place');
-const placeForm = document.querySelector('.popup__form-place');
-const cardContainer = document.querySelector('.group');
-const cardTemplate = document.querySelector('.group-template');
-// groupPopup
+// попап места, для передачи данных
 const groupImage = document.querySelector('.popup-image__image');
 const groupText = document.querySelector('.popup-image__text');
 const groupPopup = document.querySelector('.popup-image');
-const groupCloseButton = document.querySelector('.popup__close-group');
-const placeInput = document.querySelector('.popup__input_text_place');
-const imageInput = document.querySelector('.popup__input_text_image');
+// передаёт данные в класс Card
+export { groupImage, groupText, groupPopup };
+const config = {
+    selectorPlaceList: '.group',
+    selectorTemplatePlace: '.group-template',
+    selectTemplateForm: '.popup__form',
+}
+const tasksList = document.querySelector(config.selectorPlaceList);
+for (const item of initialCards) {
+    const task = new Card(config.selectorTemplatePlace, item);
+    const element = task.getElement();
+    tasksList.append(element);
+}
+// добавление карточки
+placeForm.addEventListener('submit', addCardSubmitHandler);
+function addCardSubmitHandler(event) {
+    event.preventDefault();
+    const group =  ({ name: placeInput.value, link: imageInput.value });
+    placeForm.reset();
+    const task = new Card(config.selectorTemplatePlace, group);
+    const element = task.getElement();
+    tasksList.append(element);
+    closePopup(placePopup);
+}
 // открытие попапа
 placeButton.addEventListener('click', (event) => {
     event.preventDefault();
     openPopup(placePopup);
 });
-// кнопка закрыть placePopup
+// // кнопка закрыть placePopup
 placeCloseButton.addEventListener('click', () => {
     closePopup(placePopup);
 });
@@ -112,57 +136,25 @@ groupCloseButton.addEventListener('click', () => {
 });
 // закрывается вне groupPopup
 outsideClosePopup(groupPopup);
-// закрывается вне placePopup
+// // закрывается вне placePopup
 outsideClosePopup(placePopup);
-// функция удаления
-function deleteCard(evt) {
-    const card = evt.target.closest('.group__element').remove();
-}
-// функция удаления карточек
-function deleteCardEvent(card) {
-    const deleteButton = card.querySelector(".group__image-trash");
-    deleteButton.addEventListener('click', deleteCard);
-}
-placeForm.addEventListener('submit', addCardSubmitHandler);
-// начальное создание карточек
-function createCard(text) {
-    const card = cardTemplate.content.cloneNode(true);
-    // кнопка лайка
-    const likeButton = card.querySelector('.group__like');
-    likeButton.addEventListener('click', function (evt) {
-        evt.target.classList.toggle('group__like_active');
-    });
-    const cardText = card.querySelector('.group__element-name');
-    cardText.textContent = text.name;
-    const cardImage = card.querySelector('.group__element-image');
-    cardImage.src = text.link;
-    cardImage.alt = text.name;
-    cardImage.addEventListener('click', () => {
-        groupImage.src = cardImage.src;
-        groupText.textContent = cardText.textContent;
-        groupImage.alt = cardText.textContent;
-        openPopup(groupPopup);
-    })
-    deleteCardEvent(card);
-    return card;
-}
-// начальная публикация карточек
-function renderCards() {
-    initialCards.reverse().forEach(item => {
-        const cardHtml = createCard(item);
-        addCardToSection(cardHtml);
-    })
+// импорт проверки формы
+import FormValidator from './FormValidator.js';
+// валидация формы
+// все настройки form
+const configForm = {
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__button',
+    inactiveButtonClass: 'popup__button_disabled',
+    inputErrorClass: 'popup__error-text',
+    errorClass: 'popup__error'
 };
-renderCards();
-// добавление карточки через попап
-function addCardSubmitHandler(event) {
-    event.preventDefault();
-    const group = createCard({ name: placeInput.value, link: imageInput.value });
-    placeForm.reset();
-    addCardToSection(group);
-    closePopup(placePopup);
-}
-// для записывания карточек
-function addCardToSection(card) {
-    cardContainer.prepend(card);
-};
+const formProfile = document.querySelector('.popup__form');
+const formPlace = document.querySelector('.popup__form-place');
+// валидация редактирования профиля
+const FormProfileValidation = new FormValidator(configForm, formProfile);
+FormProfileValidation.enableValidation();
+// // валидация добавления места
+const FormPlaceValidation = new FormValidator(configForm, formPlace);
+FormPlaceValidation.enableValidation();
