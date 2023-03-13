@@ -26,14 +26,15 @@
 @import url(../blocks/profile/__image-add/profile__image-add.css);
 /* подключение group */
 @import url(../blocks/group/group.css);
-@import url(../blocks/group/__trash/group__trash.css);
-@import url(../blocks/group/__image-trash/group__image-trash.css);
-@import url(../blocks/group/__element-image/group__element-image.css);
-@import url(../blocks/group/__element-label/group__element-label.css);
-@import url(../blocks/group/__element-name/group__element-name.css);
-@import url(../blocks/group/__element/group__element.css);
-@import url(../blocks/group/__like/group__like.css);
-@import url(../blocks/group/__like/_active/group__like_active.css);
+/* подключение card */
+@import url(../blocks/card/card.css);
+@import url(../blocks/card/__image/card__image.css);
+@import url(../blocks/card/__image-trash/card__image-trash.css);
+@import url(../blocks/card/__label/card__label.css);
+@import url(../blocks/card/__like/card__like.css);
+@import url(../blocks/card/__like/_active/card__like_active.css);
+@import url(../blocks/card/__name/card__name.css);
+@import url(../blocks/card/__trash/card__trash.css);
 /* подключение footer */
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);

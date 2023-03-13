@@ -1,6 +1,10 @@
+// импорт проверки формы
+import FormValidator from './FormValidator.js';
+// импорт класса 
+import Card from './Card.js';
 // переменные aboutPopup
 const aboutButton = document.querySelector('.profile__button-edit');
-const aboutPopup = document.querySelector('.popup_about');
+const aboutPopup = document.querySelector('.popup_type_about');
 const aboutCloseButton = aboutPopup.querySelector('.popup__close');
 const aboutAddButton = document.querySelector('.popup__button');
 const aboutnForm = document.querySelector('.popup__form-about');
@@ -8,6 +12,19 @@ const nameInput = document.querySelector('.popup__input_text_name');
 const workInput = document.querySelector('.popup__input_text_work');
 const profileName = document.querySelector('.profile__info-name');
 const profileWork = document.querySelector('.profile__info-work');
+// переменные placePopup
+const placeButton = document.querySelector('.profile__button-add');
+const placePopup = document.querySelector('.popup_place');
+const placeCloseButton = document.querySelector('.popup__close-place');
+const placeForm = document.querySelector('.popup__form-place');
+const groupCloseButton = document.querySelector('.popup__close-group');
+// для передачи значений из формы
+const placeInput = document.querySelector('.popup__input_text_place');
+const imageInput = document.querySelector('.popup__input_text_image');
+// попап места, для передачи данных
+const groupImage = document.querySelector('.popup-image__image');
+const groupText = document.querySelector('.popup-image__text');
+const groupPopup = document.querySelector('.popup-image');
 // закрытие попапа
 function closePopup(popup) {
     popup.classList.remove('popup_open');
@@ -55,17 +72,6 @@ function handleAboutFormSubmit(event) {
 }
 aboutnForm.addEventListener('submit', handleAboutFormSubmit);
 // скрипт для placePopup
-// переменные placePopup
-const placeButton = document.querySelector('.profile__button-add');
-const placePopup = document.querySelector('.popup_place');
-const placeCloseButton = document.querySelector('.popup__close-place');
-const placeForm = document.querySelector('.popup__form-place');
-const groupCloseButton = document.querySelector('.popup__close-group');
-// для передачи значений из формы
-const placeInput = document.querySelector('.popup__input_text_place');
-const imageInput = document.querySelector('.popup__input_text_image');
-// импорт класса 
-import Card from './Card.js';
 // массив карточек
 const initialCards = [
     {
@@ -93,32 +99,28 @@ const initialCards = [
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
 ];
-// попап места, для передачи данных
-const groupImage = document.querySelector('.popup-image__image');
-const groupText = document.querySelector('.popup-image__text');
-const groupPopup = document.querySelector('.popup-image');
-// передаёт данные в класс Card
-export { groupImage, groupText, groupPopup };
 const config = {
     selectorPlaceList: '.group',
-    selectorTemplatePlace: '.group-template',
-    selectTemplateForm: '.popup__form',
+    selectorTemplatePlace: '.card-template',
 }
 const tasksList = document.querySelector(config.selectorPlaceList);
-for (const item of initialCards) {
-    const task = new Card(config.selectorTemplatePlace, item);
+// функция добавления функции
+function cardGenerate(item) {
+    const task = new Card(config.selectorTemplatePlace, item, openPopup);
     const element = task.getElement();
     tasksList.append(element);
+}
+// начальная генерация карточек
+for (const item of initialCards) {
+    cardGenerate(item);
 }
 // добавление карточки
 placeForm.addEventListener('submit', addCardSubmitHandler);
 function addCardSubmitHandler(event) {
     event.preventDefault();
-    const group =  ({ name: placeInput.value, link: imageInput.value });
+    const group = ({ name: placeInput.value, link: imageInput.value });
     placeForm.reset();
-    const task = new Card(config.selectorTemplatePlace, group);
-    const element = task.getElement();
-    tasksList.append(element);
+    cardGenerate(group);
     closePopup(placePopup);
 }
 // открытие попапа
@@ -130,6 +132,7 @@ placeButton.addEventListener('click', (event) => {
 placeCloseButton.addEventListener('click', () => {
     closePopup(placePopup);
 });
+console.log(cardImage);
 // кнопка закрыть groupPopup
 groupCloseButton.addEventListener('click', () => {
     closePopup(groupPopup);
@@ -138,8 +141,6 @@ groupCloseButton.addEventListener('click', () => {
 outsideClosePopup(groupPopup);
 // // закрывается вне placePopup
 outsideClosePopup(placePopup);
-// импорт проверки формы
-import FormValidator from './FormValidator.js';
 // валидация формы
 // все настройки form
 const configForm = {
@@ -153,8 +154,10 @@ const configForm = {
 const formProfile = document.querySelector('.popup__form');
 const formPlace = document.querySelector('.popup__form-place');
 // валидация редактирования профиля
-const FormProfileValidation = new FormValidator(configForm, formProfile);
-FormProfileValidation.enableValidation();
+const formProfileValidation = new FormValidator(configForm, formProfile);
+formProfileValidation.enableValidation();
 // // валидация добавления места
-const FormPlaceValidation = new FormValidator(configForm, formPlace);
-FormPlaceValidation.enableValidation();
+const formPlaceValidation = new FormValidator(configForm, formPlace);
+formPlaceValidation.enableValidation();
+// передаёт данные в класс Card
+export { groupImage, groupText, groupPopup };

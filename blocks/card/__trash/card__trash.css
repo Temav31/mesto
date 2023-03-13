@@ -1,4 +1,4 @@
-.group__trash {
+.card__trash {
     background-color: transparent;
     border: none;
     position: absolute;
@@ -7,6 +7,6 @@
     cursor: pointer;
 }
 
-.group__trash:hover {
+.card__trash:hover {
     opacity: 0.6;
 }

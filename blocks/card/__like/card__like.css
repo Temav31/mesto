@@ -1,4 +1,4 @@
-.group__like {
+.card__like {
     background-color: transparent;
     border: none;
     width: 22px;
@@ -8,6 +8,6 @@
     cursor: pointer;
 }
 
-.group__like:hover {
+.card__like:hover {
     opacity: 0.5;
 }

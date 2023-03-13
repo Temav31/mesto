@@ -10,7 +10,6 @@ class FormValidator {
         this._errorClass = config.errorClass;
         // поиск нужных элементов
         this._inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
-        this._formList = Array.from(this._formElement.querySelectorAll(this._formSelector));
         this._buttonElement = this._formElement.querySelector(this._submitButtonSelector);
     }
     // показывает ошибку инпута
@@ -71,12 +70,10 @@ class FormValidator {
         });
     }
     enableValidation() {
-        this._formList.forEach(() => {
-            this._formElement.addEventListener('submit', () => {
-                this._disableButton();
-            });
-            this._setEventListeners();
+        this._formElement.addEventListener('submit', () => {
+            this._disableButton();
         });
+        this._setEventListeners();
     }
 }
 export default FormValidator;

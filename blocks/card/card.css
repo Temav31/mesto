@@ -1,4 +1,4 @@
-.group__element {
+.card {
     background-color: white;
     border-radius: 10px;
     width: 282px;
@@ -8,7 +8,7 @@
 }
 
 @media (min-width: 1080px) {
-    .group__element {
+    .card {
         margin: 0;
     }
 }
