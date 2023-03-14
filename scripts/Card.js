@@ -19,7 +19,7 @@ class Card {
         this._image.addEventListener('click', this._openPlacePopup);
     }
     _deleteCard = () => {
-        this._trash.closest('.card').remove();
+        this._element.remove();
     }
     _likeCard = () => {
         this._like.classList.toggle('card__like_active');

@@ -35,7 +35,6 @@ class FormValidator {
         } else {
             this._hideInputError(inputElement);
         }
-        console.log('hi');
     }
     // слушатель при заполнении формы
     _setEventListeners() {
