@@ -6,7 +6,6 @@ import Card from './Card.js';
 const aboutButton = document.querySelector('.profile__button-edit');
 const aboutPopup = document.querySelector('.popup_type_about');
 const aboutCloseButton = aboutPopup.querySelector('.popup__close');
-const aboutAddButton = document.querySelector('.popup__button');
 const aboutnForm = document.querySelector('.popup__form-about');
 const nameInput = document.querySelector('.popup__input_text_name');
 const workInput = document.querySelector('.popup__input_text_work');
@@ -14,7 +13,7 @@ const profileName = document.querySelector('.profile__info-name');
 const profileWork = document.querySelector('.profile__info-work');
 // переменные placePopup
 const placeButton = document.querySelector('.profile__button-add');
-const placePopup = document.querySelector('.popup_place');
+const placePopup = document.querySelector('.popup_type_place');
 const placeCloseButton = document.querySelector('.popup__close-place');
 const placeForm = document.querySelector('.popup__form-place');
 const groupCloseButton = document.querySelector('.popup__close-group');
@@ -24,7 +23,7 @@ const imageInput = document.querySelector('.popup__input_text_image');
 // попап места, для передачи данных
 const groupImage = document.querySelector('.popup-image__image');
 const groupText = document.querySelector('.popup-image__text');
-const groupPopup = document.querySelector('.popup-image');
+const groupPopup = document.querySelector('.popup_type_image');
 // закрытие попапа
 function closePopup(popup) {
     popup.classList.remove('popup_open');
