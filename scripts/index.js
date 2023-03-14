@@ -107,12 +107,11 @@ const tasksList = document.querySelector(config.selectorPlaceList);
 // функция добавления функции
 function cardGenerate(item) {
     const task = new Card(config.selectorTemplatePlace, item, openPopup);
-    const element = task.getElement();
-    tasksList.append(element);
+    return task.getElement();
 }
 // начальная генерация карточек
 for (const item of initialCards) {
-    cardGenerate(item);
+    tasksList.append(cardGenerate(item));
 }
 // добавление карточки
 placeForm.addEventListener('submit', addCardSubmitHandler);
@@ -120,7 +119,7 @@ function addCardSubmitHandler(event) {
     event.preventDefault();
     const group = ({ name: placeInput.value, link: imageInput.value });
     placeForm.reset();
-    cardGenerate(group);
+    tasksList.append(cardGenerate(group));
     closePopup(placePopup);
 }
 // открытие попапа
@@ -132,7 +131,6 @@ placeButton.addEventListener('click', (event) => {
 placeCloseButton.addEventListener('click', () => {
     closePopup(placePopup);
 });
-console.log(cardImage);
 // кнопка закрыть groupPopup
 groupCloseButton.addEventListener('click', () => {
     closePopup(groupPopup);
