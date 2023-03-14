@@ -21,8 +21,8 @@ const groupCloseButton = document.querySelector('.popup__close-group');
 const placeInput = document.querySelector('.popup__input_text_place');
 const imageInput = document.querySelector('.popup__input_text_image');
 // попап места, для передачи данных
-const groupImage = document.querySelector('.popup-image__image');
-const groupText = document.querySelector('.popup-image__text');
+const groupImage = document.querySelector('.popup__image-image');
+const groupText = document.querySelector('.popup__text-image');
 const groupPopup = document.querySelector('.popup_type_image');
 // закрытие попапа
 function closePopup(popup) {

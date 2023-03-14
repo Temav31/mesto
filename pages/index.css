@@ -54,10 +54,7 @@
 @import url(../blocks/popup/__label/popup__label.css);
 @import url(../blocks/popup/__input/_visible/popup__input_visible.css);
 @import url(../blocks/popup/_type/popup_type_image.css);
-/* подключение popup-image */
-@import url(../blocks/popup-image/popup-image.css);
-@import url(../blocks/popup-image/__text/popup-image__text.css);
-@import url(../blocks/popup-image/__elements/popup-image__elements.css);
-@import url(../blocks/popup-image/__image/popup-image__image.css);
-/* ошибка интуп */
+@import url(../blocks/popup/__elements-image/popup__elements-image.css);
+@import url(../blocks/popup/__image-image/popup__image-image.css);
+@import url(../blocks/popup/__text-image/popup__text-image.css);
 @import url(../blocks/popup/__error/popup__error.css);
