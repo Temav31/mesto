@@ -1,4 +1,3 @@
-// import { nameInput as name, workInput as work } from './index.js'
 class UserInfo {
     constructor(profileName, profileWork) {
         this._name = profileName;
