@@ -1,13 +1,11 @@
-import { groupImage as popupImage, groupText as popupText, groupPopup as popup } from './index.js'
 class Card {
-    constructor(template, item, openPopup) {
+    constructor(template, {items, handleCardClick}) {
         this._template = template;
-        this._name = item.name;
-        this._src = item.link;
-        this._openPopup = openPopup;
+        this._name = items.name;
+        this._src = items.link;
+        this._handleCardClick = handleCardClick;
         // для функций
         this._deleteCard = this._deleteCard.bind(this);
-        this._openPlacePopup = this._openPlacePopup.bind(this);
         this._likeCard = this._likeCard.bind(this);
     }
     _getElementFromTemplate() {
@@ -16,19 +14,15 @@ class Card {
     _addEventListeners() {
         this._trash.addEventListener('click', this._deleteCard);
         this._like.addEventListener('click', this._likeCard);
-        this._image.addEventListener('click', this._openPlacePopup);
+        this._image.addEventListener('click', () => {
+            this._handleCardClick(this._name, this._src)
+        });
     }
     _deleteCard = () => {
         this._element.remove();
     }
     _likeCard = () => {
         this._like.classList.toggle('card__like_active');
-    }
-    _openPlacePopup = () => {
-        popupText.textContent = this._place.textContent;
-        popupImage.src = this._image.src;
-        popupImage.alt = this._place.textContent;
-        this._openPopup(popup);
     }
     getElement() {
         this._element = this._getElementFromTemplate();
