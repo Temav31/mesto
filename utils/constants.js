@@ -44,3 +44,7 @@ export const configForm = {
     inputErrorClass: 'popup__error-text',
     errorClass: 'popup__error'
 };
+// импорт картинок
+import likeImage from '../image/like.svg';
+import likeActiveImage from '../image/likeActive.svg';
+import logoImage from '../image/logo1.svg';

@@ -5,23 +5,23 @@
     <meta charset="UTF -8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesto</title>
-    <link rel="stylesheet" href="./pages/index.css">
-    <script src="./scripts/index.js" defer type="module"></script>
+    <!-- <link rel="stylesheet" href="./pages/index.css"> -->
+    <!-- <script src="./scripts/index.js" defer type="module"></script> -->
 </head>
 
 <body class="page">
     <header class="header">
-        <img src="./image/logo1.svg" alt="Логотип" class="header__logo">
+        <img src="<%=require('../image/logo1.svg')%>" alt="Логотип" class="header__logo">
     </header>
     <main>
         <section class="profile">
             <div class="profile__fullscrin">
-                <img src="./image/image.jpg" class="profile__avatar-image" alt="На фотографии дедушка в красной шапке">
+                <img src="<%=require('../image/image.jpg')%>" class="profile__avatar-image" alt="На фотографии дедушка в красной шапке">
                 <div class="profile__info">
                     <div class="profile__info-author">
                         <h1 class="profile__info-name text-profile">Жак-Ив Кусто</h1>
                         <button type="button" class="profile__button-edit">
-                            <img src="./image/vector.svg" alt="Значок редактирования профиля"
+                            <img src="<%=require('../image/vector.svg')%>" alt="Значок редактирования профиля"
                                 class="profile__image-edit">
                         </button>
                     </div>
@@ -29,13 +29,13 @@
                 </div>
             </div>
             <button type="button" class="profile__button-add">
-                <img src="./image/add.svg" alt="Значок добавить" class="profile__image-add">
+                <img src="<%=require('../image/add.svg')%>" alt="Значок добавить" class="profile__image-add">
             </button>
         </section>
         <div class="popup popup_type_about">
             <div class="popup__elements">
                 <button type="reset" class="popup__close">
-                    <img src="./image/close.svg" alt="Значок закрытия формы" class="popup__button-close">
+                    <img src="<%=require('../image/close.svg')%>" alt="Значок закрытия формы" class="popup__button-close">
                 </button>
                 <div class="popup__container">
                     <h2 class="popup__header text-group">
@@ -60,7 +60,7 @@
         <div class="popup popup_place popup_type_place">
             <div class="popup__elements">
                 <button type="reset" class=" popup__close popup__close-place">
-                    <img src="./image/close.svg" alt="Значок закрытия формы" class="popup__button-close">
+                    <img src="<%=require('../image/close.svg')%>" alt="Значок закрытия формы" class="popup__button-close">
                 </button>
                 <div class="popup__container">
                     <h2 class="popup__header text-group">
@@ -87,7 +87,7 @@
         <div class="popup popup_type_image">
             <div class="popup__elements-image">
                 <button type="reset" class=" popup__close popup__close-group">
-                    <img src="./image/close.svg" alt="Значок закрытия формы" class="popup__button-close">
+                    <img src="<%=require('../image/close.svg')%>" alt="Значок закрытия формы" class="popup__button-close">
                 </button>
                 <div class="popup__container-image">
                     <img src="#" alt="#" class="popup__image-image">
@@ -104,7 +104,7 @@
     <template class="card-template">
         <div class="card">
             <button class=" card__trash">
-                <img src="./image/Trash.svg" alt="Значок мусорки" class="card__image-trash">
+                <img src="<%=require('../image/Trash.svg')%>" alt="Значок мусорки" class="card__image-trash">
             </button>
             <img alt="#" class="card__image">
             <div class=" card__label">

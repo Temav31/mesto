@@ -1,16 +1,16 @@
-// import '../pages/index.css'; // добавьте импорт главного файла стилей 
+import '../pages/index.css'; // добавьте импорт главного файла стилей 
 // импорт проверки формы
-import FormValidator from '../scripts/FormValidator.js';
+import FormValidator from '../components/FormValidator.js';
 // импорт класса 
-import Card from '../scripts/Card.js';
+import Card from '../components/Card.js';
 // импорт popup 
-import UserInfo from '../scripts/UserInfo.js';
+import UserInfo from '../components/UserInfo.js';
 // импорт section
-import Section from '../scripts/Section.js';
+import Section from '../components/Section.js';
 // импорт PopupWithForm
-import PopupWithForm from '../scripts/PopupWithForm.js';
+import PopupWithForm from '../components/PopupWithForm.js';
 // импорт PopupWithImage
-import PopupWithImage from '../scripts/PopupWithImage.js';
+import PopupWithImage from '../components/PopupWithImage';
 // импорт переменных
 import {
     initialCards,
@@ -24,7 +24,7 @@ import {
     profileName, profileWork,
     // кнопочки
     aboutButton, placeButton
-} from '../unils/constants.js'
+} from '../utils/constants.js'
 // начало работы с валидацией
 const formProfile = document.querySelector('.popup__form');
 const formPlace = document.querySelector('.popup__form-place');
@@ -48,12 +48,19 @@ const popupEditProfile = new PopupWithForm({
     }
 })
 popupEditProfile.setEventListeners();
+function updateInfoProfile({name, work}){
+    nameInput.value = name;
+    workInput.value = work;
+}
 // передача данных в попап
 aboutButton.addEventListener('click', (evt) => {
     evt.preventDefault();
     const dataProfile = infoProfile.getUserInfo();
-    nameInput.value = dataProfile.name;
-    workInput.value = dataProfile.work;
+    updateInfoProfile({
+        name: dataProfile.name,
+        work: dataProfile.work,
+    })
+    
     popupEditProfile.open();
 });
 // закончилась работа в попапом
