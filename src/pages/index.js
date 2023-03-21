@@ -1,4 +1,4 @@
-import '../pages/index.css'; // добавьте импорт главного файла стилей 
+import './index.css'; // добавьте импорт главного файла стилей 
 // импорт проверки формы
 import FormValidator from '../components/FormValidator.js';
 // импорт класса 
@@ -66,8 +66,9 @@ aboutButton.addEventListener('click', (evt) => {
 // закончилась работа в попапом
 // генерация карточки
 const popupImage = new PopupWithImage(groupPopup);
+popupImage.setEventListeners();
 // функция генерафии карточек
-function cardGenerate(item) {
+function generateCard(item) {
     const task = new Card(config.selectorTemplatePlace, {
         items: item,
         handleCardClick: (name, src) => {
@@ -80,7 +81,7 @@ function cardGenerate(item) {
 const sectionAbout = new Section({
     items: initialCards,
     renderer: (item) => {
-        sectionAbout.addItem(cardGenerate(item));
+        sectionAbout.addItem(generateCard(item));
     }
 },
 '.group'
@@ -90,7 +91,7 @@ sectionAbout.renderItem();
 const popupAddCard = new PopupWithForm({
     popupSelector: placePopup,
     submitForm: (data) => {
-        sectionAbout.addItem(cardGenerate(data));
+        sectionAbout.addItem(generateCard(data));
         popupAddCard.close();
     }
 })
