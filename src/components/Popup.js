@@ -11,7 +11,6 @@ class Popup {
         }
     }
     open() {
-        // console.log(this._popup);
         this._popup.classList.add('popup_open');
         document.addEventListener('keyup', this._handleEscClose);
     }

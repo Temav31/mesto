@@ -7,6 +7,10 @@ export const profileWork = document.querySelector('.profile__info-work');
 export const placeButton = document.querySelector('.profile__button-add');
 export const placePopup = document.querySelector('.popup_type_place');
 export const groupPopup = document.querySelector('.popup_type_image');
+export const deletePopup = document.querySelector('.popup_type_delete');
+export const imagePopup = document.querySelector('.popup_type_profile');
+export const imageProfile = document.querySelector('.profile__avatar-image');
+export const imageButtonProfile = document.querySelector('.profile__button');
 export const initialCards = [
     {
         name: 'Архыз',

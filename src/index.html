@@ -16,7 +16,10 @@
     <main>
         <section class="profile">
             <div class="profile__fullscrin">
-                <img src="<%=require('./image/image.jpg')%>" class="profile__avatar-image" alt="На фотографии дедушка в красной шапке">
+                <button type="button" class="profile__button">
+                    <img src="<%=require('./image/image.jpg')%>" class="profile__avatar-image"
+                        alt="На фотографии дедушка в красной шапке">
+                </button>
                 <div class="profile__info">
                     <div class="profile__info-author">
                         <h1 class="profile__info-name text-profile">Жак-Ив Кусто</h1>
@@ -32,10 +35,32 @@
                 <img src="<%=require('./image/add.svg')%>" alt="Значок добавить" class="profile__image-add">
             </button>
         </section>
+        <div class="popup popup_type_profile">
+            <div class="popup__elements">
+                <button type="reset" class=" popup__close">
+                    <img src="<%=require('./image/close.svg')%>" alt="Значок закрытия формы"
+                        class="popup__button-close">
+                </button>
+                <div class="popup__container popup__container_type_profile">
+                    <h2 class="text-group popup__header popup__header_type_profile">
+                        Обновить аватар
+                    </h2>
+                    <form name="form-place" class="popup__form popup__form_type_profile" novalidate>
+                        <label class="popup__label popup__label_type_profile">
+                            <input id="url-input" name="avatar" type="url" class="popup__input popup__input_text_profile"
+                                placeholder="Ссылка на картинку" required>
+                            <span class="popup__error-text url-input-error text"></span>
+                        </label>
+                        <button type="submit" class="popup__button text">Сохранить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
         <div class="popup popup_type_about">
             <div class="popup__elements">
                 <button type="reset" class="popup__close">
-                    <img src="<%=require('./image/close.svg')%>" alt="Значок закрытия формы" class="popup__button-close">
+                    <img src="<%=require('./image/close.svg')%>" alt="Значок закрытия формы"
+                        class="popup__button-close">
                 </button>
                 <div class="popup__container">
                     <h2 class="popup__header text-group">
@@ -43,13 +68,13 @@
                     </h2>
                     <form name="form-name" class="popup__form popup__form-about" novalidate>
                         <label class="popup__label">
-                            <input id="name-input" name="name" type="text" class="popup__input popup__input_text_name" required
-                                minlength="2" maxlength="40">
+                            <input id="name-input" name="name" type="text" class="popup__input popup__input_text_name"
+                                required minlength="2" maxlength="40">
                             <span class="popup__error-text name-input-error text"></span>
                         </label>
                         <label class="popup__label">
-                            <input id="work-input" name="work" type="text" class="popup__input popup__input_text_work" required
-                                minlength="2" maxlength="200">
+                            <input id="work-input" name="about" type="text" class="popup__input popup__input_text_work"
+                                required minlength="2" maxlength="200">
                             <span class="popup__error-text work-input-error text"></span>
                         </label>
                         <button type="submit" class="popup__button text">Сохранить</button>
@@ -57,10 +82,11 @@
                 </div>
             </div>
         </div>
-        <div class="popup popup_place popup_type_place">
+        <div class="popup popup_type_place">
             <div class="popup__elements">
                 <button type="reset" class=" popup__close popup__close-place">
-                    <img src="<%=require('./image/close.svg')%>" alt="Значок закрытия формы" class="popup__button-close">
+                    <img src="<%=require('./image/close.svg')%>" alt="Значок закрытия формы"
+                        class="popup__button-close">
                 </button>
                 <div class="popup__container">
                     <h2 class="popup__header text-group">
@@ -87,12 +113,27 @@
         <div class="popup popup_type_image">
             <div class="popup__elements-image">
                 <button type="reset" class=" popup__close popup__close-group">
-                    <img src="<%=require('./image/close.svg')%>" alt="Значок закрытия формы" class="popup__button-close">
+                    <img src="<%=require('./image/close.svg')%>" alt="Значок закрытия формы"
+                        class="popup__button-close">
                 </button>
                 <div class="popup__container-image">
                     <img src="#" alt="#" class="popup__image-image">
                 </div>
                 <p class="text popup__text-image"></p>
+            </div>
+        </div>
+        <div class="popup popup_type_delete">
+            <div class="popup__elements">
+                <button type="reset" class=" popup__close">
+                    <img src="<%=require('./image/close.svg')%>" alt="Значок закрытия формы"
+                        class="popup__button-close">
+                </button>
+                <div class="popup__container popup__container_type_delete">
+                    <h2 class="text-group popup__header popup__header_type_delete">
+                        Вы уверены?
+                    </h2>
+                    <button type="submit" class="popup__button popup__button_type_delete text">Да</button>
+                </div>
             </div>
         </div>
     </main>
@@ -109,8 +150,10 @@
             <img alt="#" class="card__image">
             <div class=" card__label">
                 <h3 class="card__name text-group"></h3>
-                <button type="button" class="card__like">
-                </button>
+                <div class="card__like-element">
+                <button type="button" class="card__like"></button>
+                    <p class="card__numbers-like text">0</p>
+                </div>
             </div>
         </div>
     </template>
