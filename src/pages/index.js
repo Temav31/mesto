@@ -205,7 +205,7 @@ const popupAddImage = new PopupWithForm({
         popupAddImage.update(true);
         api.editProfileImage(data)
             .then((res) => {
-                console.log(res.status);
+                // console.log(res.status);
                 editImage(imageProfile, data);
                 popupAddImage.close();
             })
