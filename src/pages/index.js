@@ -165,16 +165,6 @@ function generateCard(item) {
     });
     return task.getElement();
 }
-// 
-// удаление карточки
-function deleteCard(id, element) {
-    console.log(id);
-    console.log(element);
-    api.removeCard(id)
-        .then(() => {
-            element.remove();
-        })
-}
 // создание и добавление
 const sectionAbout = new Section({
     items: initialCards,
