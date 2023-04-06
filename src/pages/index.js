@@ -31,7 +31,7 @@ import {
     imageProfile, imageButtonProfile
 } from '../utils/constants.js'
 // начало работы с валидацией
-const formProfile = document.querySelector('.popup__form');
+const formProfile = document.querySelector('.popup__form-about');
 const formPlace = document.querySelector('.popup__form-place');
 // валидация редактирования профиля
 const formProfileValidation = new FormValidator(configForm, formProfile);
@@ -60,10 +60,6 @@ Promise.all([api.getCard(), api.getProfile()])
     })
 // работа с попапом редактирования 
 const infoProfile = new UserInfo(profileName, profileWork);
-// метод изменения изображения 
-function editImage(element, data) {
-    element.src = data.avatar;
-}
 // записываем значения 
 api.getProfile().then((items) => {
     editImage(imageProfile, items);
@@ -198,15 +194,19 @@ placeButton.addEventListener('click', (evt) => {
     popupAddCard.open();
 });
 popupAddCard.setEventListeners();
+// метод изменения изображения 
+function editImage(element, data) {
+    element.src = data.avatar;
+}
 // работа с формой
 const popupAddImage = new PopupWithForm({
     popupSelector: imagePopup,
     submitForm: (data) => {
         popupAddImage.update(true);
         api.editProfileImage(data)
-            .then((res) => {
-                // console.log(res.status);
+            .then((data) => {
                 editImage(imageProfile, data);
+                // imageProfile.src = data.avatar;
                 popupAddImage.close();
             })
             .catch((err) => {

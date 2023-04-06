@@ -18,7 +18,7 @@
             <div class="profile__fullscrin">
                 <button type="button" class="profile__button">
                     <img src="<%=require('./image/image.jpg')%>" class="profile__avatar-image"
-                        alt="На фотографии дедушка в красной шапке">
+                        alt="На фотографии аватар пользователя">
                 </button>
                 <div class="profile__info">
                     <div class="profile__info-author">
@@ -47,9 +47,9 @@
                     </h2>
                     <form name="form-place" class="popup__form popup__form_type_profile" novalidate>
                         <label class="popup__label popup__label_type_profile">
-                            <input id="avatar-input" name="avatar" type="url" class="popup__input popup__input_text_profile"
+                            <input id="avata-input" name="avatar" type="url" class="popup__input popup__input_text_profile"
                                 placeholder="Ссылка на картинку" required>
-                            <span class="popup__error-text url-input-error text"></span>
+                            <span class="popup__error-text avata-input-error text"></span>
                         </label>
                         <button type="submit" class="popup__button text">Сохранить</button>
                     </form>
