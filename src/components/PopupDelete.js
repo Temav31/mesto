@@ -9,7 +9,6 @@ class PopupDelete extends Popup {
         super.setEventListeners();
         this._buttonRemove.addEventListener('click', () => {
             this._removeCard();
-            this.close();
         })
     }
     deleteCard(event) {

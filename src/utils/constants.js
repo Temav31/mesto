@@ -4,6 +4,7 @@ export const nameInput = document.querySelector('.popup__input_text_name');
 export const workInput = document.querySelector('.popup__input_text_work');
 export const profileName = document.querySelector('.profile__info-name');
 export const profileWork = document.querySelector('.profile__info-work');
+export const profileImage = document.querySelector('.profile__avatar-image');
 export const placeButton = document.querySelector('.profile__button-add');
 export const placePopup = document.querySelector('.popup_type_place');
 export const groupPopup = document.querySelector('.popup_type_image');

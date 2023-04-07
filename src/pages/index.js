@@ -25,7 +25,7 @@ import {
     // инпуты 
     workInput, nameInput,
     // ячейки для редактирования
-    profileName, profileWork,
+    profileName, profileWork, profileImage,
     // кнопочки
     aboutButton, placeButton,
     imageProfile, imageButtonProfile
@@ -59,14 +59,13 @@ Promise.all([api.getCard(), api.getProfile()])
         console.log(err);
     })
 // работа с попапом редактирования 
-const infoProfile = new UserInfo(profileName, profileWork);
+const infoProfile = new UserInfo(profileName, profileWork, profileImage);
 // записываем значения 
 api.getProfile().then((items) => {
-    editImage(imageProfile, items);
-    // console.log(items);
     infoProfile.setUserInfo({
         name: items.name,
         about: items.about,
+        avatar: items.avatar
     })
 })
     .catch((err) => {
@@ -79,10 +78,11 @@ const popupEditProfile = new PopupWithForm({
     submitForm: (data) => {
         popupEditProfile.update(true);
         api.editProfile(data)
-            .then(() => {
+            .then((data) => {
                 infoProfile.setUserInfo({
                     name: data.name,
                     about: data.about,
+                    avatar: data.avatar
                 }),
                     popupEditProfile.close();
             })
@@ -130,6 +130,7 @@ function generateCard(item) {
                 api.removeCard(task.getApiId())
                     .then(() => {
                         task.deleteCard();
+                        popupRemove.close();
                     })
                     .catch((err) => {
                         // обработка ошибки
@@ -194,10 +195,6 @@ placeButton.addEventListener('click', (evt) => {
     popupAddCard.open();
 });
 popupAddCard.setEventListeners();
-// метод изменения изображения 
-function editImage(element, data) {
-    element.src = data.avatar;
-}
 // работа с формой
 const popupAddImage = new PopupWithForm({
     popupSelector: imagePopup,
@@ -205,8 +202,11 @@ const popupAddImage = new PopupWithForm({
         popupAddImage.update(true);
         api.editProfileImage(data)
             .then((data) => {
-                editImage(imageProfile, data);
-                // imageProfile.src = data.avatar;
+                infoProfile.setUserInfo({
+                    name: data.name,
+                    about: data.about,
+                    avatar: data.avatar
+                });
                 popupAddImage.close();
             })
             .catch((err) => {
