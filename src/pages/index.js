@@ -189,6 +189,7 @@ const popupAddCard = new PopupWithForm({
             })
     }
 })
+// 
 // обработчик открытия попапап
 placeButton.addEventListener('click', (evt) => {
     evt.preventDefault();
